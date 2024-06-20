@@ -16,10 +16,10 @@ const NavLinksCatto = () => {
         </li>
         <li>
           <Link
-            href="/page"
+            href="/about"
             className="font-medium text-blue-600 hover:underline dark:text-blue-500"
           >
-            Page
+            About
           </Link>
         </li>
       </ul>

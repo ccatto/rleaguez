@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
-
+import { Metadata } from 'next';;
+import JumbotronFlexibleCatto from './components/AtomicDesign/molecules/JumbotronCattoFlexible';
 export const metadata: Metadata = {
   title: "Chris Catto's Next starter",
   description: "Chris Catto's Next starter",
@@ -8,7 +8,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="rounded">Main</div>
+      <div className="rounded">
+        <JumbotronFlexibleCatto title="RLeaguez" description="A place for sports leaguez."/>
+      </div>
     </>
   );
 }
