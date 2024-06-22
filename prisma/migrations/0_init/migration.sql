@@ -1,9 +1,9 @@
--- CreateTable
-CREATE TABLE "playing_with_neon" (
-    "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
-    "value" REAL,
+-- CreateTable League
+CREATE TABLE "League" (
+    "leagueId" SERIAL NOT NULL,
+    "leagueName" TEXT NOT NULL,
+    "leagueColor" REAL,
+    "isActive" BOOLEAN NOT NULL default true
 
-    CONSTRAINT "playing_with_neon_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "league_pkey" PRIMARY KEY ("leagueId")
 );
-
