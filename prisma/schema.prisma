@@ -7,15 +7,34 @@ datasource db {
   url      = env("DATABASE_URL_NEON")
 }
 
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  content   String?
+  published Boolean  @default(false)
+  author    String   @db.VarChar(255)
+  authorId  Int
+}
+
 model League {
   id                 String    @id @default(cuid())
   leagueId           String
   leagueName       String
   leagueColor         String
   isActive   Boolean @default(true)
+  leagueSport  Int
 
   @@unique([leagueId])
 }
+
+// model zzTable {
+//   id                 String    @id @default(cuid())
+//   zzTableId           String
+
+//   @@unique([zzTableId])
+// }
 
 // model Account {
 //   id                 String    @id @default(cuid())

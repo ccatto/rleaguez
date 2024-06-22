@@ -10,12 +10,20 @@ export default function Page() {
   return (
     <>
       <div className="rounded">
-        <JumbotronFlexibleCatto title="RLeaguez" description="A place for sports leaguez."/>
+        <JumbotronFlexibleCatto
+          title="RLeaguez"
+          description="A place for sports leaguez."
+        />
       </div>
-      <p className='indent-4'><Link className='font-medium text-blue-600 dark:text-blue-500 hover:underline' href='/leaguez'>Create a League</Link>
+      <p className="indent-4">
+        <Link
+          className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+          href="/leaguez"
+        >
+          Create a League
+        </Link>
       </p>
       <Link href={'/leaguez/orange'}>orange league</Link>
-
     </>
   );
 }
