@@ -8,6 +8,7 @@ import JumbotronFlexibleCatto from '@components/app/components/AtomicDesign/mole
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 
 // export const metadata: Metadata = {
 //   title: 'RLeaguez Create a Sports League',
@@ -25,6 +26,7 @@ const schema = z.object({
 type FormFields = z.infer<typeof schema>;
 
 export default function Page() {
+
   const {
     register,
     handleSubmit,
@@ -42,6 +44,7 @@ export default function Page() {
       // simple await 1 second to prove await with async
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log('data == ', data);
+
     } catch {
       setError('root', {
         message: 'This is an error with the form',
@@ -52,45 +55,40 @@ export default function Page() {
   return (
     <div className="h-lvh bg-slate-400">
       <hr className="m-1" />
-      <JumbotronFlexibleCatto
-        title="Orange Sports League Home"
-        description="This is the Orange sports league home page."
-      />
-      <br />
-      <br />
-      <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
-        There are no current schedules.
-        {/* <Link href="/leaguez/schedulez/create">Create one</Link> */}
+      <JumbotronFlexibleCatto title="Orange Sports League Home" description="This is the Orange sports league home page." />
+      <br /><br />
+      <div className='ml-5 max-w-sm p-6 bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700'>
+        There are no current schedules. 
+        <Link href="/leaguez/schedulez/create">Create one</Link>
       </div>
-      <br />
-      <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
+      <br/>
+      <div className='ml-5 max-w-sm p-6 bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700'>
+
         <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
-          <p className="m-4 font-medium text-white">League Name:</p>
-          <input
-            {...register('leagueName')}
-            type="text"
+          <p className='text-white font-medium m-4'>League Name:
+          </p>
+          <input {...register('leagueName')} type="text"
             placeholder="League Name"
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            className='block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           />
           {errors.leagueName && <div>{errors.leagueName.message}</div>}
           {/* <br /> */}
-          <p className="m-4 font-medium text-white">Sport:</p>
+          <p className='text-white font-medium m-4'>Sport:
+          </p>
           <input
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            className='block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
             {...register('sport')}
             type="sport"
             placeholder="Sport"
           />
           {errors.sport && <div>{errors.sport.message}</div>}
-          <button
-            disabled={isSubmitting}
-            type="submit"
-            className="mb-2 me-2 mt-4 rounded-2xl bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
+          <button disabled={isSubmitting} type="submit"
+            className='text-white mt-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-2xl text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'>
             {isSubmitting ? 'Loading..' : 'Submit'}
           </button>
           {errors.root && <div>{errors.root.message}</div>}
         </form>
+
       </div>
       {/* <button type="button" className="text-white rounded-2xl bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a League</button> */}
       <hr className="m-3" />

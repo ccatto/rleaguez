@@ -23,6 +23,7 @@ export default function Page() {
       >
         Create a League
       </button>
+      <Link href="/leaguez/create">create a league</Link>
       {/* <Link href={'/leaguez/orange'}>orange league</Link> */}
       <hr className="m-3" />
     </div>

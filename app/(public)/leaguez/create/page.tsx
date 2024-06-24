@@ -50,7 +50,7 @@ export default function Page() {
         message: 'This is an error with the form',
       });
     } finally {
-      navigate('/orange');
+      navigate('/leaguez/orange');
     }
   };
 
