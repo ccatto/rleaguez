@@ -21,8 +21,8 @@ model Post {
 model League {
   id                 String    @id @default(cuid())
   leagueId           String
-  leagueName       String
-  leagueColor         String
+  leagueName         String
+  leagueColor        String
   isActive   Boolean @default(true)
   leagueSport  Int
 
