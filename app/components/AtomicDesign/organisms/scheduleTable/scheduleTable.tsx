@@ -11,21 +11,22 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 
-
 export default function Page() {
-
-
   return (
     <div className="h-lvh bg-slate-400">
       <hr className="m-1" />
-      <JumbotronFlexibleCatto title="Leaguez Schedule" description="This is the Orange sports league schedule list." />
-      <br /><br />
-      <div className='ml-5 max-w-sm p-6 bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700'>
-        Schedule Table: 
+      <JumbotronFlexibleCatto
+        title="Leaguez Schedule"
+        description="This is the Orange sports league schedule list."
+      />
+      <br />
+      <br />
+      <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
+        Schedule Table:
         {/* <Link href="/leaguez/schedulez/create">Create one</Link> */}
       </div>
-      <br/>
-      <div className='ml-5 max-w-sm p-6 bg-white border border-gray-200 rounded-2xl shadow dark:bg-gray-800 dark:border-gray-700'>
+      <br />
+      <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
         section here
       </div>
       {/* <button type="button" className="text-white rounded-2xl bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a League</button> */}

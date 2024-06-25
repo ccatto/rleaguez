@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
+// import LeaguezTable from './../../components/AtomicDesign/molecules/LeaguezTable';
+import { LeaguezTable } from './../../components/AtomicDesign/molecules/LeaguezTable';
 
 export const metadata: Metadata = {
   title: 'RLeaguez Sports Leaguez',
@@ -16,6 +18,9 @@ export default function Page() {
       <hr className="m-1" />
       RLeaguez sports leaguez
       <br />
+      Begin :YO-
+      <LeaguezTable league="blue" />
+      End of league table
       <br />
       <button
         type="button"

@@ -12,7 +12,6 @@ export async function GET(request: Request) {
   // return NextResponse.json({ message: "Hello World" });
 }
 
-
 // Handles POST requests to /api
 export async function POST(request: Request) {
   const requestData = await request.json();
@@ -21,7 +20,7 @@ export async function POST(request: Request) {
     await prisma.league.create({
       data: {
         leagueColor: requestData['name'],
-      }
+      },
     });
     // await prisma.league.create({
     //   data: {
