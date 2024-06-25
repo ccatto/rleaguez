@@ -13,40 +13,29 @@ import {
   DropdownMenuTrigger,
 } from '../../../../../components/ui/dropdown-menu';
 
-import Page from './scheduleTable';
-// import { Page } from '@/app/lib/definitions';
+// import { League } from '@/app/lib/definitions';
+import { League } from '../../../../../lib/definitions';
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-// export type Payment = {
-//   id: string;
-//   amount: number;
-//   status: 'pending' | 'processing' | 'success' | 'failed';
-//   email: string;
-// };
+export const PagesColumns: ColumnDef<League>[] = [
+  {
+    accessorKey: 'leagueId',
+    header: 'League Id',
+  },
+  {
+    accessorKey: 'leagueName',
+    header: 'League Name',
+  },
+  {
+    accessorKey: 'leagueColor',
+    header: 'League Color',
+  },
+  {
+    accessorKey: 'isActive',
+    header: 'Is Active',
+  },
+  {
+    accessorKey: 'leagueSport',
+    header: 'League Sport',
+  },
+];
 
-// export const PagesColumns: ColumnDef<Page>[] = [
-//   {
-//     accessorKey: 'page_id',
-//     header: 'Page Id',
-//   },
-// //   {
-// //     accessorKey: 'page_name',
-// //     header: 'Page Name',
-// //   },
-// //   {
-// //     accessorKey: 'page_title',
-// //     header: 'page_title',
-// //     // header: () => <div className="text-right">Page Title</div>,
-// //     // cell: ({ row }) => {
-// //     //   const page_title = 'page_title';
-// //     //   // const page_title = parseFloat(row.getValue('page_title'));
-// //     //   // const formatted = new Intl.NumberFormat('en-US', {
-// //     //   //   style: 'currency',
-// //     //   //   currency: 'USD',
-// //     //   // }).format(amount);
-
-// //     //   return <div className="text-right font-medium">{page_title}</div>;
-// //     // },
-// //   },
-// ];

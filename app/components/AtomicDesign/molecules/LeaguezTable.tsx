@@ -1,6 +1,7 @@
 // 'use client';
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 type Props = {
   league: string;
@@ -10,25 +11,40 @@ type Props = {
 };
 
 const getLeagueData = async () => {
+  // const [league, setLeague] = useState({});
+
+
   console.log('inside ');
-  const pagesDataResponse = await fetch('api/league', {
+  const leagueResponse = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/league', {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
     },
     // body: JSON.stringify(data),
   });
-  console.log('pagesDataResponse === ', pagesDataResponse);
+  const data = await leagueResponse.json();
+  console.log("data now === ", data);
+  // setLeague(data);
+  // return data;
+  // console.log('pagesDataResponse.json === ', pagesDataResponse.json());
+  // console.log('pagesDataResponse.json === ', pagesDataResponse.json());
+  // console.log('next attempt', Response.json(pagesDataResponse));
 };
 
 // export async function LeaguezTable () {
-export  function LeaguezTable({ league }: Props) {
+export async function LeaguezTable({ league }: Props) {
   console.log('hey now');
-  // const leagueData = getLeagueData();
+  const leagueData = getLeagueData();
+  // console.log(" =-------------- ", league);
+  // console.log('leagueData === ',  leagueData);
   return (
     <>
       <h1>league data </h1>
       <div> {league} = passed prop</div>
+
+
+
+      
     </>
   );
 }
