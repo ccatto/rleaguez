@@ -38,4 +38,3 @@ export const PagesColumns: ColumnDef<League>[] = [
     header: 'League Sport',
   },
 ];
-

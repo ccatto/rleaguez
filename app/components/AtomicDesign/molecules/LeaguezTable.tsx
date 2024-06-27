@@ -13,17 +13,19 @@ type Props = {
 const getLeagueData = async () => {
   // const [league, setLeague] = useState({});
 
-
   console.log('inside ');
-  const leagueResponse = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/league', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
+  const leagueResponse = await fetch(
+    process.env.NEXT_PUBLIC_BASE_URL + '/api/league',
+    {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+      // body: JSON.stringify(data),
     },
-    // body: JSON.stringify(data),
-  });
+  );
   const data = await leagueResponse.json();
-  console.log("data now === ", data);
+  console.log('data now === ', data);
   // setLeague(data);
   // return data;
   // console.log('pagesDataResponse.json === ', pagesDataResponse.json());
@@ -41,10 +43,6 @@ export async function LeaguezTable({ league }: Props) {
     <>
       <h1>league data </h1>
       <div> {league} = passed prop</div>
-
-
-
-      
     </>
   );
 }

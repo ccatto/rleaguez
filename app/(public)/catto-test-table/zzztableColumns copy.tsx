@@ -20,8 +20,6 @@
 // import Person from './data';
 
 // // export const PagesColumns: ColumnDef<Person>[] = [
- 
-
 
 // // const columnHelper = createColumnHelper<Person>()
 
