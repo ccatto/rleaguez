@@ -24,6 +24,11 @@ export default function Page() {
         </Link>
       </p>
       <Link href={'/leaguez/orange'}>orange league</Link>
+      <br /><br/>
+      <Link href={'/leaguez/league-test-table'}>simple table league</Link>
+      <br /><br/>
+      <Link href={'/leaguez/league-grid'}> league data grid</Link>
+
     </>
   );
 }
