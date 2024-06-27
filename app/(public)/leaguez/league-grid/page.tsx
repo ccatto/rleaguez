@@ -1,7 +1,45 @@
 import { Payment, columns } from './columns';
 import { DataTableCatto } from '../../../../components/ui/data-table-catto';
 import React from 'react';
+import { StaticLeague } from '../../../../lib/definitions';
+import { columnsLeague } from './columnsLeague';
 
+async function getStaticLeagueData(): Promise<StaticLeague[]> {
+  return [
+    {
+      "id": "1",
+      "leagueId": 12,
+      "leagueName": "Blue League",
+      "leagueColor": "Blue",
+      "isActive": true,
+      "leagueSport": 1,
+    },
+    {
+      "id": "11",
+      "leagueId": 123,
+      "leagueName": "zah League",
+      "leagueColor": "BlueOrange",
+      "isActive": true,
+      "leagueSport": 2,
+    },
+    {
+      "id": "13",
+      "leagueId": 124,
+      "leagueName": "Blue League 3",
+      "leagueColor": "BlueBlack",
+      "isActive": true,
+      "leagueSport": 18,
+    },
+    {
+      "id": "121",
+      "leagueId": 1223,
+      "leagueName": "Kelly League",
+      "leagueColor": "BlueOrange",
+      "isActive": true,
+      "leagueSport": 3,
+    },
+  ]
+}
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
   return [
@@ -83,10 +121,12 @@ async function getData(): Promise<Payment[]> {
 
 export default async function DemoPage() {
   const data = await getData();
+  const staticLeagueData = await getStaticLeagueData();
 
   return (
     <div className="container mx-auto py-10">
-      <DataTableCatto columns={columns} data={data} />
+      <DataTableCatto columns={columnsLeague} data={staticLeagueData} />
+      {/* <DataTableCatto columns={columns} data={data} /> */}
     </div>
   );
 }
