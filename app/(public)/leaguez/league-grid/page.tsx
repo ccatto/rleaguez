@@ -4,45 +4,45 @@ import React from 'react';
 import { StaticLeague } from '../../../../lib/definitions';
 import { columnsLeague } from './columnsLeague';
 import { useState } from 'react';
-import { getLeagueData } from './getLeagueData'
+import { getLeagueData } from './getLeagueData';
 
 //  const [league, setLeague] = useState({});
 
 async function getStaticLeagueData(): Promise<StaticLeague[]> {
   return [
     {
-      "id": "1",
-      "leagueId": 12,
-      "leagueName": "Blue League",
-      "leagueColor": "Blue",
-      "isActive": true,
-      "leagueSport": 1,
+      id: '1',
+      leagueId: 12,
+      leagueName: 'Blue League',
+      leagueColor: 'Blue',
+      isActive: true,
+      leagueSport: 1,
     },
     {
-      "id": "11",
-      "leagueId": 123,
-      "leagueName": "zah League",
-      "leagueColor": "BlueOrange",
-      "isActive": true,
-      "leagueSport": 2,
+      id: '11',
+      leagueId: 123,
+      leagueName: 'zah League',
+      leagueColor: 'BlueOrange',
+      isActive: true,
+      leagueSport: 2,
     },
     {
-      "id": "13",
-      "leagueId": 124,
-      "leagueName": "Blue League 3",
-      "leagueColor": "BlueBlack",
-      "isActive": true,
-      "leagueSport": 18,
+      id: '13',
+      leagueId: 124,
+      leagueName: 'Blue League 3',
+      leagueColor: 'BlueBlack',
+      isActive: true,
+      leagueSport: 18,
     },
     {
-      "id": "121",
-      "leagueId": 1223,
-      "leagueName": "Kelly League",
-      "leagueColor": "BlueOrange",
-      "isActive": true,
-      "leagueSport": 3,
+      id: '121',
+      leagueId: 1223,
+      leagueName: 'Kelly League',
+      leagueColor: 'BlueOrange',
+      isActive: true,
+      leagueSport: 3,
     },
-  ]
+  ];
 }
 
 // const getLeagueData = async () => {
@@ -141,7 +141,7 @@ async function getData(): Promise<Payment[]> {
 }
 
 const newData = await getLeagueData();
-console.log('newData === ', newData);
+// console.log('newData === ', newData);
 
 export default async function LeagueGridPage() {
   const data = await getData();
@@ -150,7 +150,7 @@ export default async function LeagueGridPage() {
 
   return (
     <div className="container mx-auto py-10">
-            <DataTableCatto columns={columnsLeague} data={newData} />
+      <DataTableCatto columns={columnsLeague} data={newData} />
 
       {/* <DataTableCatto columns={columnsLeague} data={staticLeagueData} /> */}
       {/* <DataTableCatto columns={columns} data={data} /> */}
