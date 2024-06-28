@@ -2,6 +2,7 @@
 
 import { Metadata } from 'next';
 import React from 'react';
+// import JumbotronFlexibleCatto from './components/AtomicDesign/molecules/JumbotronCattoFlexible';
 import JumbotronFlexibleCatto from '@components/app/components/AtomicDesign/molecules/JumbotronCattoFlexible';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { number, z } from 'zod';
@@ -19,18 +20,21 @@ import { navigate } from '../../../components/Utils/Redirect/redirect';
 //   },
 // };
 
-// league_id    Int    @id @default(autoincrement())
-// league_name     String
-// league_color    String
-// is_active     Boolean @default(true)
-// league_sport  String
+// id: string;
+// leagueId: number;
+// leagueName: string;
+// leagueColor: string;
+// isActive: boolean;
+// leagueSport: number;
 
 const schema = z.object({
-  league_id: z.number(),
-  league_name: z.string().min(3),
-  league_color: z.string().min(2),
-  is_active: z.boolean(),
-  league_sport: z.string().min(2),
+  // id: z.number(),
+  id: z.string().min(2),
+  // leagueId: number(),
+  leagueId: z.string().min(2),
+  leagueName: z.string().min(3),
+  leagueColor: z.string().min(2),
+  leagueSport: z.number(),
 });
 
 type FormFields = z.infer<typeof schema>;
@@ -43,13 +47,15 @@ export default function Page() {
     formState: { errors, isSubmitting },
   } = useForm<FormFields>({
     defaultValues: {
-      league_name: 'my league name',
+      leagueName: '',
     },
     resolver: zodResolver(schema),
   });
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
+      // simple await 1 second to prove await with async
+      // await new Promise((resolve) => setTimeout(resolve, 1000));
 
       console.log('data == ', data);
 
@@ -78,52 +84,61 @@ export default function Page() {
     <div className="h-lvh heigh-screen bg-slate-400 font-light ">
       <hr className="m-1" />
       <JumbotronFlexibleCatto
-        title="Create a Sports League 1"
-        description="Create a sports league 1 to maintain schedule & playoff brackets"
+        title="Create a Sports League"
+        description="Create a sports league to maintain schedule & playoff brackets"
       />
       <br />
       <br />
 
       <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
         <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
-          {/* <p className="m-4 font-light text-white">League Id:</p>
+          <p className="m-4 font-light text-white">League Id:</p>
           <input
-            {...register('league_id')}
+            {...register('leagueId')}
             type="text"
             // { ...register('leagueId', { valueAsNumber: true } ) }
             // type="number"
             // placeholder=""
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           />
-          {errors.league_id && <div>{errors.league_id.message}</div>} */}
+          {errors.leagueId && <div>{errors.leagueId.message}</div>}
+          {/* <br /> */}
+          <p className="m-4 font-medium text-white">Id:</p>
+          <input
+            {...register('id')}
+            // {...register('id')}
+            type="text"
+            // placeholder=""
+            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+          />
+          {errors.id && <div>{errors.id.message}</div>}
           {/* <br /> */}
           <p className="m-4 font-light text-white">League Name:</p>
           <input
-            {...register('league_name')}
+            {...register('leagueName')}
             type="text"
             placeholder="League Name"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           />
-          {errors.league_name && <div>{errors.league_name.message}</div>}
+          {errors.leagueName && <div>{errors.leagueName.message}</div>}
           {/* <br /> */}
           <p className="m-4 font-light text-white">League Color:</p>
           <input
-            {...register('league_color')}
+            {...register('leagueColor')}
             type="text"
             placeholder="League Name"
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           />
-          {errors.league_color && <div>{errors.league_color.message}</div>}
+          {errors.leagueColor && <div>{errors.leagueColor.message}</div>}
           {/* <br /> */}
           <p className="m-4 font-light text-white">Sport:</p>
           <input
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-            {...register('league_sport')}
-            type="text"
-            placeholder="Pickleball"
+            {...register('leagueSport', { valueAsNumber: true })}
+            type="number"
+            placeholder=""
           />
-          {errors.league_sport && <div>{errors.league_sport.message}</div>}
-
+          {errors.leagueSport && <div>{errors.leagueSport.message}</div>}
           <button
             disabled={isSubmitting}
             type="submit"
