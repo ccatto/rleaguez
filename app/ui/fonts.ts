@@ -8,7 +8,7 @@ export const lusitana = Lusitana({
 });
 
 export const montserrat = Montserrat({
-  weight: ['100', '200', '400', '500', '700'],
+  weight: ['100', '200', '300', '400', '500', '700'],
   subsets: ['latin'],
 });
 
