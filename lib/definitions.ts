@@ -9,7 +9,6 @@ export type League = {
 export type StaticLeague = {
   id: string;
   leagueId: number;
-  // status: 'pending' | 'processing' | 'success' | 'failed';
   leagueName: string;
   leagueColor: string;
   isActive: boolean;
