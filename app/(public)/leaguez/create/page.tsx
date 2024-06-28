@@ -27,7 +27,6 @@ import { navigate } from '../../../components/Utils/Redirect/redirect';
 // isActive: boolean;
 // leagueSport: number;
 
-
 const schema = z.object({
   // id: z.number(),
   id: z.string().min(2),
@@ -70,10 +69,8 @@ export default function Page() {
           body: JSON.stringify(data),
         },
       );
-      console.log("leagueResponse === ", leagueResponse);
+      console.log('leagueResponse === ', leagueResponse);
       // const data = await leagueResponse.json();
-
-
     } catch {
       setError('root', {
         message: 'This is an error with the form',
@@ -84,7 +81,7 @@ export default function Page() {
   };
 
   return (
-    <div className="h-lvh bg-slate-400 font-thin ">
+    <div className="h-lvh heigh-screen bg-slate-400 font-light ">
       <hr className="m-1" />
       <JumbotronFlexibleCatto
         title="Create a Sports League"
@@ -95,11 +92,10 @@ export default function Page() {
 
       <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
         <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
-
-          <p className="m-4 font-thin text-white">League Id:</p>
+          <p className="m-4 font-light text-white">League Id:</p>
           <input
-          { ...register('leagueId' ) }
-          type="text"
+            {...register('leagueId')}
+            type="text"
             // { ...register('leagueId', { valueAsNumber: true } ) }
             // type="number"
             // placeholder=""
@@ -107,9 +103,9 @@ export default function Page() {
           />
           {errors.leagueId && <div>{errors.leagueId.message}</div>}
           {/* <br /> */}
-          <p className="m-4 font-thin text-white">Id:</p>
+          <p className="m-4 font-medium text-white">Id:</p>
           <input
-          { ...register('id') }
+            {...register('id')}
             // {...register('id')}
             type="text"
             // placeholder=""
@@ -117,7 +113,7 @@ export default function Page() {
           />
           {errors.id && <div>{errors.id.message}</div>}
           {/* <br /> */}
-          <p className="m-4 font-thin text-white">League Name:</p>
+          <p className="m-4 font-light text-white">League Name:</p>
           <input
             {...register('leagueName')}
             type="text"
@@ -126,7 +122,7 @@ export default function Page() {
           />
           {errors.leagueName && <div>{errors.leagueName.message}</div>}
           {/* <br /> */}
-          <p className="m-4 font-thin text-white">League Color:</p>
+          <p className="m-4 font-light text-white">League Color:</p>
           <input
             {...register('leagueColor')}
             type="text"
@@ -134,11 +130,11 @@ export default function Page() {
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
           />
           {errors.leagueColor && <div>{errors.leagueColor.message}</div>}
-          {/* <br /> */}     
-          <p className="m-4 font-thin text-white">Sport:</p>
+          {/* <br /> */}
+          <p className="m-4 font-light text-white">Sport:</p>
           <input
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-            { ...register('leagueSport', { valueAsNumber: true } ) }
+            {...register('leagueSport', { valueAsNumber: true })}
             type="number"
             placeholder=""
           />

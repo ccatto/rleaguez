@@ -29,6 +29,14 @@ model League {
   @@unique([leagueId])
 }
 
+model League1 {
+  league_id    Int    @id @default(autoincrement())
+  league_name     String
+  league_color    String
+  is_active     Boolean @default(true)
+  league_sport  String
+}
+
 // model zzTable {
 //   id                 String    @id @default(cuid())
 //   zzTableId           String
