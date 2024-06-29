@@ -27,10 +27,10 @@ import { useState } from 'react';
 // league_sport  String
 
 const schema = z.object({
-  league_id: z.number(),
+  // league_id: z.number(),
   league_name: z.string().min(3),
   league_color: z.string().min(2),
-  is_active: z.boolean(),
+  // is_active: z.boolean(),
   league_sport: z.string().min(2),
 });
 
@@ -39,7 +39,7 @@ type FormFields = z.infer<typeof schema>;
 // export default function Page() {
 const LeagueCreatePage = () => {
 
-  // const [isSubmitSuccessfulTrue, setIsSubmitSuccessfulTrue] = useState(false);
+  const [isSubmitSuccessfulTrue, setIsSubmitSuccessfulTrue] = useState(false);
 
   const {
     register,
@@ -58,17 +58,21 @@ const LeagueCreatePage = () => {
 
       console.log('data == ', data);
 
-      // const leagueResponse = await fetch(
-      //   process.env.NEXT_PUBLIC_BASE_URL + '/api/v2/league',
-      //   {
-      //     method: 'POST',
-      //     headers: {
-      //       'content-type': 'application/json',
-      //     },
-      //     body: JSON.stringify(data),
-      //   },
-      // );
+      const leagueResponse = await fetch(
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/v2/league',
+        {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        },
+      );
+      console.log("--------------       -----------------         --------------");
       console.log('leagueResponse === ', leagueResponse);
+      if (leagueResponse.status === 200){
+        setIsSubmitSuccessfulTrue(true);
+      }
       // const data = await leagueResponse.json();
     } catch {
       setError('root', {
@@ -76,13 +80,13 @@ const LeagueCreatePage = () => {
       });
     } finally {
       setIsSubmitSuccessfulTrue(true);
-      navigate('/leaguez/create');
+      // navigate('/leaguez/create');
     }
   };
 
   return (
     <>
-      {/* {!isSubmitSuccessfulTrue && ( */}
+      {!isSubmitSuccessfulTrue && (
 
         <div className="h-lvh heigh-screen bg-slate-400 font-light ">
           <hr className="m-1" />
@@ -146,14 +150,14 @@ const LeagueCreatePage = () => {
           {/* <button type="button" className="text-white rounded-2xl bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a League</button> */}
           <hr className="m-3" />
         </div>
-      {/* )} */}
-      {/* {isSubmitSuccessfulTrue && (
+      )}
+      {isSubmitSuccessfulTrue && (
         <div className="h-screen bg-slate-400 font-light ">
           <h1 className='text-black'>
             Form Submitted successfully.
           </h1>
           </div>
-         )} */}
+         )}
     </>
   );
 }
