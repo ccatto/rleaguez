@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { navigate } from '../../../components/Utils/Redirect/redirect';
+import { useState } from 'react';
 
 // export const metadata: Metadata = {
 //   title: 'RLeaguez Create a Sports League',
@@ -54,7 +55,7 @@ export default function Page() {
       console.log('data == ', data);
 
       const leagueResponse = await fetch(
-        process.env.NEXT_PUBLIC_BASE_URL + '/api/league',
+        process.env.NEXT_PUBLIC_BASE_URL + '/api/v2/league',
         {
           method: 'POST',
           headers: {
