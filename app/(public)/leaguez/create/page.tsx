@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { navigate } from '../../../components/Utils/Redirect/redirect';
 import { useState } from 'react';
+import Link from 'next/link';
 
 // export const metadata: Metadata = {
 //   title: 'RLeaguez Create a Sports League',
@@ -38,7 +39,6 @@ type FormFields = z.infer<typeof schema>;
 
 // export default function Page() {
 const LeagueCreatePage = () => {
-
   const [isSubmitSuccessfulTrue, setIsSubmitSuccessfulTrue] = useState(false);
 
   const {
@@ -55,7 +55,6 @@ const LeagueCreatePage = () => {
 
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
-
       console.log('data == ', data);
 
       const leagueResponse = await fetch(
@@ -68,9 +67,11 @@ const LeagueCreatePage = () => {
           body: JSON.stringify(data),
         },
       );
-      console.log("--------------       -----------------         --------------");
+      console.log(
+        '--------------       -----------------         --------------',
+      );
       console.log('leagueResponse === ', leagueResponse);
-      if (leagueResponse.status === 200){
+      if (leagueResponse.status === 200) {
         setIsSubmitSuccessfulTrue(true);
       }
       // const data = await leagueResponse.json();
@@ -87,7 +88,6 @@ const LeagueCreatePage = () => {
   return (
     <>
       {!isSubmitSuccessfulTrue && (
-
         <div className="h-lvh heigh-screen bg-slate-400 font-light ">
           <hr className="m-1" />
           <JumbotronFlexibleCatto
@@ -95,6 +95,12 @@ const LeagueCreatePage = () => {
             description="Create a sports league 1 to maintain schedule & playoff brackets"
           />
           <br />
+          <Link
+            href={'/leaguez'}
+            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+          >
+            Leaguez Home page
+          </Link>
           <br />
 
           <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
@@ -153,13 +159,11 @@ const LeagueCreatePage = () => {
       )}
       {isSubmitSuccessfulTrue && (
         <div className="h-screen bg-slate-400 font-light ">
-          <h1 className='text-black'>
-            Form Submitted successfully.
-          </h1>
-          </div>
-         )}
+          <h1 className="text-black">Form Submitted successfully.</h1>
+        </div>
+      )}
     </>
   );
-}
+};
 
 export default LeagueCreatePage;
