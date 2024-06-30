@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 // import LeaguezTable from './../../components/AtomicDesign/molecules/LeaguezTable';
-import { LeaguezTable } from './../../components/AtomicDesign/molecules/LeaguezTable';
+import { LeaguezTable } from '../../components/AtomicDesign/molecules/zzzLeaguezTable';
+import LeagueGridPage from './league-grid/page';
 
 export const metadata: Metadata = {
   title: 'RLeaguez Sports Leaguez',
@@ -30,6 +31,8 @@ export default function Page() {
       </button>
       <Link href="/leaguez/create">create a league</Link>
       {/* <Link href={'/leaguez/orange'}>orange league</Link> */}
+      <hr className="m-5 mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700 md:my-10" />
+          <LeagueGridPage/>
       <hr className="m-3" />
     </div>
   );

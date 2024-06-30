@@ -14,3 +14,11 @@ export type StaticLeague = {
   isActive: boolean;
   leagueSport: number;
 };
+
+export type Leaguez = {
+  league_id: number;
+  league_name: string;
+  league_color: string;
+  is_active: boolean;
+  league_sport: number;
+};
