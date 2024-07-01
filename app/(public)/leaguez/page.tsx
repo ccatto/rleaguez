@@ -1,9 +1,16 @@
 import { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
+import LeaguezTable from '../../components/AtomicDesign/organisms/LeaguezTable/LeaguezTable';
+
+
 // import LeaguezTable from './../../components/AtomicDesign/molecules/LeaguezTable';
-import { LeaguezTable } from '../../components/AtomicDesign/molecules/zzzLeaguezTable';
-import LeagueGridPage from './league-grid/page';
+// import { LeaguezTable } from '../../components/AtomicDesign/molecules/zzzLeaguezTable';
+// import LeagueGridPage from './league-grid/page';
+// import { LeaguezTable } from '../../components/AtomicDesign/molecules/zzzLeaguezTable';
+// import LeaguezTable from '../../components/AtomicDesign/organisms/
+// import { Test } from '../../components/AtomicDesign/organisms/
+// import LeaguezTable
 
 export const metadata: Metadata = {
   title: 'RLeaguez Sports Leaguez',
@@ -13,14 +20,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+const Page = () => {
+// export default function Page() {
   return (
-    <div className="h-lvh bg-slate-400">
+    <div className="h-lvh bg-slate-700">
       <hr className="m-1" />
       RLeaguez sports leaguez
       <br />
       Begin :YO-
-      <LeaguezTable league="blue" />
+      {/* <LeaguezTable league="blue" /> */}
       End of league table
       <br />
       <button
@@ -32,8 +40,12 @@ export default function Page() {
       <Link href="/leaguez/create">create a league</Link>
       {/* <Link href={'/leaguez/orange'}>orange league</Link> */}
       <hr className="m-5 mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700 md:my-10" />
-          <LeagueGridPage/>
+          <h1>Leagues</h1>
+          {/* <LeaguezTable /> */}
+          <LeaguezTable/>
+          {/* <LeagueGridPage/> */}
       <hr className="m-3" />
     </div>
   );
 }
+export default Page;
