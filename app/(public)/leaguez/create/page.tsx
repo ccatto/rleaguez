@@ -102,7 +102,8 @@ const LeagueCreatePage = () => {
           >
             Leaguez Home page
           </Link>
-          <br /><br />
+          <br />
+          <br />
 
           <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
             <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
@@ -155,7 +156,7 @@ const LeagueCreatePage = () => {
             </form>
           </div>
           {/* <button type="button" className="text-white rounded-2xl bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a League</button> */}
-          <br/>
+          <br />
 
           <hr className="m-3" />
         </div>

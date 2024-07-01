@@ -9,27 +9,29 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="rounded">
-        <JumbotronFlexibleCatto
-          title="RLeaguez"
-          description="A place for sports leaguez."
-        />
+      <div className="h-screen">
+        <div className="rounded">
+          <JumbotronFlexibleCatto
+            title="RLeaguez"
+            description="A place for sports leaguez."
+          />
+        </div>
+        <p className="indent-4">
+          <Link
+            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+            href="/leaguez"
+          >
+            Create a League
+          </Link>
+        </p>
+        <Link href={'/leaguez/orange'}>orange league</Link>
+        <br />
+        <br />
+        <Link href={'/leaguez/league-test-table'}>simple table league</Link>
+        <br />
+        <br />
+        <Link href={'/leaguez/league-grid'}> league data grid</Link>
       </div>
-      <p className="indent-4">
-        <Link
-          className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-          href="/leaguez"
-        >
-          Create a League
-        </Link>
-      </p>
-      <Link href={'/leaguez/orange'}>orange league</Link>
-      <br />
-      <br />
-      <Link href={'/leaguez/league-test-table'}>simple table league</Link>
-      <br />
-      <br />
-      <Link href={'/leaguez/league-grid'}> league data grid</Link>
     </>
   );
 }

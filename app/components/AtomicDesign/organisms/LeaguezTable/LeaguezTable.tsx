@@ -1,25 +1,27 @@
-// import { Payment } from './columns';
-import { DataTableCatto } from '../../../../../components/ui/data-table-catto';
+// import { DataTableCatto } from '../../../../../components/ui/data-table-catto';
+import { DataTableFilterCatto } from '../../../../../components/ui/data-table-filter-catto';
 import React from 'react';
-import { Leaguez } from '../../../../../lib/definitions';
-// import { columnsLeague } from './columnsLeague';
+import { ColumnsLeague } from './ColumnsLeague';
 // // import { useState } from 'react';
-// import { getLeagueData } from './getLeagueData';
-
-// const newData = await getLeagueData();
-// console.log('newData === ', newData);
+import { getLeagueData } from './getLeagueData';
 
 // export default async function LeagueGridPage() {
 const LeaguezTable = async () => {
-  // const newData = await getLeagueData();
-  // const data = await getData();
+  const leagueData = await getLeagueData();
+  console.log('leagueData === ', leagueData);
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto h-screen py-10">
       <h1>Data table component hey now</h1>
-      {/* <DataTableCatto columns={columnsLeague} data={newData} /> */}
-
+      {/* <DataTableCatto columns={ColumnsLeague} data={leagueData} /> */}
+      <hr />
+      <DataTableFilterCatto
+        columns={ColumnsLeague}
+        data={leagueData}
+        filterVal={'league_name'}
+        filterText={'League Name'}
+      />
     </div>
   );
-}
+};
 export default LeaguezTable;

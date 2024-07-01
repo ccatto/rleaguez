@@ -15,6 +15,7 @@ export type StaticLeague = {
   leagueSport: number;
 };
 
+// Table is League1
 export type Leaguez = {
   league_id: number;
   league_name: string;

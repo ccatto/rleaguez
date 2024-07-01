@@ -8,10 +8,25 @@ import { NextResponse } from 'next/server';
 // Handles GET requests to /api
 export async function GET(request: Request) {
   // ...
+  // console.log('request === ', request.league_id);
   const contactData = await prisma.league1.findMany();
   return NextResponse.json(contactData);
   // return NextResponse.json({ message: "Hello World" });
 }
+
+// // Handles GET requests to /api/v2/league/[league_id]
+// export async function GET(request: Request) {
+//   console.log('inside get by id')
+//   const { searchParams } = new URL(request.url)
+//   const id = searchParams.get('id')
+//   // const league_id = params.id;
+//   console.log('league_id', searchParams);
+//   // ...
+//   // console.log('request === ', request.league_id);
+//   const contactData = await prisma.league1.findMany();
+//   return NextResponse.json(contactData);
+//   // return NextResponse.json({ message: "Hello World" });
+// }
 
 // Handles POST requests to /api
 export async function POST(request: Request) {
