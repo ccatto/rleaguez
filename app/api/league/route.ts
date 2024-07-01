@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 // Handles POST requests to /api
 export async function POST(request: Request) {
   const requestData = await request.json();
-  console.log('inside route requestData === ', requestData);
+  // console.log('inside route requestData === ', requestData);
   try {
     const result = await prisma.league.create({
       data: {

@@ -8,7 +8,7 @@ import { getLeagueData } from './getLeagueData';
 
 export default async function LeagueGridPage() {
   const newData = await getLeagueData();
-  console.log('newData === ', newData);
+  // console.log('newData === ', newData);
   return (
     <div className="container mx-auto py-10">
       <DataTableCatto columns={columnsLeague} data={newData} />

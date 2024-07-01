@@ -13,7 +13,7 @@ type Props = {
 const getLeagueData = async () => {
   // const [league, setLeague] = useState({});
 
-  console.log('inside ');
+  // console.log('inside ');
   const leagueResponse = await fetch(
     process.env.NEXT_PUBLIC_BASE_URL + '/api/league',
     {
