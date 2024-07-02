@@ -1,4 +1,4 @@
-export const getLeagueData = async (slug) => {
+export const getLeagueData = async (slug : any) => {
   // console.log('FETCH api v2 inside get data for league by slug ');
   // console.log("url = ", process.env.NEXT_PUBLIC_BASE_URL + '/api/v2/league/'+slug)
   const leagueResponse = await fetch(

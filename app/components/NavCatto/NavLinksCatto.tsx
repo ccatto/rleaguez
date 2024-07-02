@@ -16,6 +16,14 @@ const NavLinksCatto = () => {
         </li>
         <li>
           <Link
+            href="/leaguez"
+            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+          >
+            Leaguez
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/about"
             className="font-medium text-blue-600 hover:underline dark:text-blue-500"
           >

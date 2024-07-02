@@ -37,6 +37,27 @@ model League1 {
   league_sport  String
 }
 
+// Table is Teamz1
+model Teamz1 {
+  team_id       Int    @id @default(autoincrement())
+  team_name     String
+  league_color  String
+  is_active     Boolean @default(true)
+  // created_date  Date
+
+}
+
+// Table is Organizationz1
+model Organizationz1 {
+  organization_id     Int    @id @default(autoincrement())
+  organization_name   String
+  organization_color  String
+  is_active           Boolean @default(true)
+  organization_owner  String
+  // created_date        Date
+
+}
+
 // model zzTable {
 //   id                 String    @id @default(cuid())
 //   zzTableId           String

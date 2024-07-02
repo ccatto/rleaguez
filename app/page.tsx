@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="h-screen">
+      <div className="h-full">
         <div className="rounded">
           <JumbotronFlexibleCatto
             title="RLeaguez"
@@ -22,6 +22,14 @@ export default function Page() {
             href="/leaguez"
           >
             Create a League
+          </Link>
+          </p>
+          <p>
+          <Link
+            className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+            href="/organizationz"
+          >
+            Create an organization
           </Link>
         </p>
         <Link href={'/leaguez/orange'}>orange league</Link>
