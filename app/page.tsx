@@ -23,8 +23,8 @@ export default function Page() {
           >
             Create a League
           </Link>
-          </p>
-          <p>
+        </p>
+        <p>
           <Link
             className="font-medium text-blue-600 hover:underline dark:text-blue-500"
             href="/organizationz"

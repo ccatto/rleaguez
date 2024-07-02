@@ -9,7 +9,7 @@ import { getLeagueData } from './getLeagueData';
 import Link from 'next/link';
 
 // export default async function LeagueGridPage() {
-const Page = async ({ params  }:{ params :any }) => {
+const Page = async ({ params }: { params: any }) => {
   console.log('---------------  ');
   console.log('inside page of league detail');
   const leagueData = await getLeagueData(params.leagueId);
@@ -24,7 +24,12 @@ const Page = async ({ params  }:{ params :any }) => {
       </h1>
 
       <JumbotronFlexibleCatto title="Test" description="TEST" />
-      <Link href={'/leaguez'} className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>Leaguez List</Link>
+      <Link
+        href={'/leaguez'}
+        className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+      >
+        Leaguez List
+      </Link>
       <h1>League Name: {leagueData.league_name}</h1>
       <h2>League Color: {leagueData.league_color}</h2>
       <h2>Is Active: {leagueData.is_active}</h2>

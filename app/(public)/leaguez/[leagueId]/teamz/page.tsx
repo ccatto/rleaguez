@@ -18,16 +18,15 @@ const Page = () => {
       <hr className="m-1" />
       RLeaguez sports leaguez
       <br />
-
-      <Link href="/teamz/create"
-      className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
-        Create a Team</Link>
-
+      <Link
+        href="/teamz/create"
+        className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+      >
+        Create a Team
+      </Link>
       <hr className="m-5 mx-auto my-4 h-1 w-48 rounded border-0 bg-gray-100 dark:bg-gray-700 md:my-10" />
       <h1>Teamz</h1>
-     
       <LeaguezTable />
-  
       <hr className="m-3" />
     </div>
   );

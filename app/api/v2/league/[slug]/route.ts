@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 import { NextResponse } from 'next/server';
 
 // Handles GET requests to /api
-export async function GET(request: Request, { params }:{ params :any}) {
+export async function GET(request: Request, { params }: { params: any }) {
   console.log('inside get league by id params.slug=== ', params.slug);
   const slug = parseInt(params.slug);
   if (isNumberCatto(slug)) {

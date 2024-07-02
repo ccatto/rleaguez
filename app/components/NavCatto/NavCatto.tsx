@@ -8,7 +8,8 @@ const NavCatto = () => {
         <div className="mx-auto flex h-20 items-center justify-between p-4">
           <div className="flex-[25%]">
             <h1 className="dark:text-blue-400">
-              <Link href={'/'}>RLeaguez</Link></h1>
+              <Link href={'/'}>RLeaguez</Link>
+            </h1>
           </div>
           <div className="flex flex-[75%] justify-end">
             <NavLinksCatto />

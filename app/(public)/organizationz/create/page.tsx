@@ -97,8 +97,6 @@ const OrganizationCreatePage = () => {
           />
           <br />
 
-
-
           <div className="ml-5 max-w-sm rounded-2xl border border-gray-200 bg-white p-6 shadow dark:border-gray-700 dark:bg-gray-800">
             <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
               {/* <p className="m-4 font-light text-white">League Id:</p>
@@ -119,7 +117,9 @@ const OrganizationCreatePage = () => {
                 placeholder="Org Name"
                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               />
-              {errors.organization_name && <div>{errors.organization_name.message}</div>}
+              {errors.organization_name && (
+                <div>{errors.organization_name.message}</div>
+              )}
               {/* <br /> */}
               <p className="m-4 font-light text-white">Organization Color:</p>
               <input
@@ -128,7 +128,9 @@ const OrganizationCreatePage = () => {
                 placeholder="Org Color"
                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
               />
-              {errors.organization_color && <div>{errors.organization_color.message}</div>}
+              {errors.organization_color && (
+                <div>{errors.organization_color.message}</div>
+              )}
               {/* <br /> */}
               <p className="m-4 font-light text-white">Sport:</p>
               <input
@@ -137,7 +139,9 @@ const OrganizationCreatePage = () => {
                 type="text"
                 placeholder="Catto"
               />
-              {errors.organization_owner && <div>{errors.organization_owner.message}</div>}
+              {errors.organization_owner && (
+                <div>{errors.organization_owner.message}</div>
+              )}
 
               <button
                 disabled={isSubmitting}
@@ -161,11 +165,12 @@ const OrganizationCreatePage = () => {
             description="We created your Organization! Let's navigate to your organization page to create a league."
           />
           <h1 className="text-black">Form Submitted successfully.</h1>
-                    <Link
+          <Link
             href={'/organizationz'}
             className="pl-3 font-medium text-blue-600 hover:underline dark:text-blue-500"
           >
-            Your Organization Home page (#todo K8 add the slug at the end which will be the name)
+            Your Organization Home page (#todo K8 add the slug at the end which
+            will be the name)
           </Link>
         </div>
       )}
